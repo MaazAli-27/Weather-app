@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="WeatherApp.css">
+</head>
+<body class="flex items-center justify-center p-4 antialiased">
+
+    <div class="glass w-full max-w-md rounded-3xl p-6 shadow-2xl relative overflow-hidden transition-all duration-500">
+        
+        <form id="search-form" class="relative mb-8">
+            <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+            <input 
+                type="text" 
+                id="city-input"
+                placeholder="Search for a city..." 
+                class="glass-input w-full py-3 pl-12 pr-4 rounded-2xl text-white placeholder-gray-400 transition-all"
+                autocomplete="off"
+            >
+        </form>
+
+        <div id="loading-state" class="hidden flex-col items-center justify-center py-12">
+            <span class="loader w-10 h-10 mb-4"></span>
+            <p class="text-gray-300">Fetching weather...</p>
+        </div>
+
+        <div id="error-state" class="hidden flex-col items-center justify-center py-8 text-center">
+            <i data-lucide="cloud-off" class="w-16 h-16 text-red-400 mb-4"></i>
+            <h3 class="text-lg font-medium text-white mb-2">City Not Found</h3>
+            <p class="text-sm text-gray-400" id="error-message">Please check the spelling and try again.</p>
+        </div>
+
+        <div id="weather-content" class="hidden opacity-0 transition-opacity duration-500">
+            <div class="text-center mb-8">
+                <h1 id="city-name" class="text-3xl font-bold tracking-tight mb-1">Karachi</h1>
+                <p id="country-name" class="text-sm text-gray-400 mb-6">Pakistan</p>
+                
+                <div class="flex justify-center items-center gap-4 mb-2">
+                    <div id="weather-icon-container" class="text-blue-300">
+                        <i data-lucide="sun" class="w-16 h-16"></i>
+                    </div>
+                    <div class="text-7xl font-light tracking-tighter">
+                        <span id="current-temp">28</span><span class="text-4xl text-gray-400 relative -top-4">°</span>
+                    </div>
+                </div>
+                
+                <p id="weather-desc" class="text-xl font-medium text-blue-100 capitalize">Clear Sky</p>
+                <p class="text-sm text-gray-400 mt-1">Feels like <span id="feels-like">30</span>°C</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="glass rounded-2xl p-4 flex items-center gap-4">
+                    <div class="bg-blue-500/20 p-2 rounded-xl text-blue-300">
+                        <i data-lucide="droplets" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 font-medium">Humidity</p>
+                        <p id="humidity" class="text-lg font-semibold">65%</p>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-4 flex items-center gap-4">
+                    <div class="bg-teal-500/20 p-2 rounded-xl text-teal-300">
+                        <i data-lucide="wind" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 font-medium">Wind Speed</p>
+                        <p id="wind-speed" class="text-lg font-semibold">12 km/h</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">5-Day Forecast</h3>
+                <div id="forecast-container" class="space-y-3">
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="WeatherApp.js"></script>
+</body>
+</html>
