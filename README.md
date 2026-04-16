@@ -17,7 +17,7 @@ A sleek, responsive, and modern weather application built with HTML, Tailwind CS
 
 ---
 
-<img width="617" height="883" alt="image" src="https://github.com/user-attachments/assets/459f19c5-3507-4240-b54d-993b0292a55d" />
+<img width="400" height="600" alt="image" src="https://github.com/user-attachments/assets/459f19c5-3507-4240-b54d-993b0292a55d" />
 
 
 ## 🛠️ Technologies & Libraries
