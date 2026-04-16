@@ -40,4 +40,4 @@ Since this project relies purely on vanilla web technologies and CDN imports, th
 ### Installation
 1. Clone the repository or download the source code:
    ```bash
-   git clone [https://github.com/your-username/weather-app.git](https://github.com/your-username/weather-app.git)
+   git clone [https://github.com/your-username/weatherApp.git](https://github.com/your-username/weatherApp.git)
